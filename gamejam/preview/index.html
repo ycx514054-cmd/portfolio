@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>视觉方案预览｜AI Game Jam 01</title>
+  <script>document.documentElement.dataset.theme=new URLSearchParams(location.search).get('theme')||'a';</script>
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+  <div class="preview-switcher" aria-label="视觉方案切换">
+    <a href="?theme=a" data-theme-link="a">A 海报</a>
+    <a href="?theme=b" data-theme-link="b">B 科技</a>
+    <a href="?theme=c" data-theme-link="c">C 展厅</a>
+    <a class="compare-link" href="../compare/" target="_top">并排比较</a>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="../"><span class="brand-mark">01</span><span>AI GAME JAM<small>OPEN CALL · 2026</small></span></a>
+    <nav><a href="#works">作品</a><a href="#rules">规则</a><a href="#about">关于</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">FIRST EDITION / 首届筹备中</p>
+        <h1><span>AI GAME</span><strong>JAM 01</strong></h1>
+        <p class="intro">一次面向 AI 游戏创作者的轻量展览与评选。不设主题，只要作品能够正常游玩，就欢迎提交。</p>
+        <div class="tags"><span>NO THEME</span><span>WEB + WINDOWS</span><span>HUMAN JUDGED</span></div>
+        <div class="actions"><a class="primary" href="#submit">提交作品</a><a class="secondary" href="#works">浏览展厅</a></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-label">PLAYABLE<br>AI</div>
+        <div class="art-number">01</div>
+        <div class="art-orbit"></div>
+        <p>MAKE WITH AI<br>PLAY WITH PEOPLE</p>
+      </div>
+    </section>
+
+    <section class="status" aria-label="活动信息">
+      <article><small>STATUS / 01</small><strong>筹备中</strong></article>
+      <article><small>DEADLINE / 02</small><strong>日期待公布</strong></article>
+      <article><small>PRIZE / 03</small><strong>奖金待公布</strong></article>
+    </section>
+
+    <section class="works" id="works">
+      <header class="section-head"><div><p>SELECTED WORKS</p><h2>作品展厅</h2></div><span>通过基础审核的作品都可以展示</span></header>
+      <div class="work-grid">
+        <article class="work-card"><div class="cover cover-one"><b>01</b><span>GAME COVER</span></div><small>WEB · EXPERIMENTAL</small><h3>等待第一件作品</h3><p>你的游戏将出现在这里。</p></article>
+        <article class="work-card"><div class="cover cover-two"><b>02</b><span>GAME COVER</span></div><small>WINDOWS · PUZZLE</small><h3>开放投稿</h3><p>类型与主题均不设限制。</p></article>
+        <article class="work-card"><div class="cover cover-three"><b>03</b><span>GAME COVER</span></div><small>WEB · NARRATIVE</small><h3>先玩到，再评选</h3><p>兼容性是参评门槛。</p></article>
+      </div>
+    </section>
+
+    <section class="rules" id="rules">
+      <header class="section-head"><div><p>HOW IT WORKS</p><h2>怎么参加</h2></div></header>
+      <ol>
+        <li><b>01</b><div><h3>准备作品</h3><p>网页游戏或 Windows 游戏均可。</p></div></li>
+        <li><b>02</b><div><h3>填写表单</h3><p>提交封面、介绍、链接与 AI 使用说明。</p></div></li>
+        <li><b>03</b><div><h3>人工试玩</h3><p>确认游戏可启动并完成核心循环。</p></div></li>
+        <li><b>04</b><div><h3>进入展厅</h3><p>通过基础审核后公开展示。</p></div></li>
+      </ol>
+    </section>
+
+    <section class="cta" id="submit"><p>OPEN CALL</p><h2>做了一个 AI 游戏？<br>把它放到这里。</h2><a href="../rules.html">查看投稿规则 →</a></section>
+  </main>
+
+  <footer id="about"><strong>AI GAME JAM 01</strong><span>轻量展览与评选实验</span><a href="../">返回正式版</a></footer>
+  <script>
+    const theme = document.documentElement.dataset.theme;
+    document.querySelector(`[data-theme-link="${theme}"]`)?.setAttribute('aria-current','page');
+  </script>
+</body>
+</html>
