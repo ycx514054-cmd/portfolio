@@ -22,7 +22,7 @@
       ${pinned ? `<div class="notice-bar"><div class="shell"><a href="notices.html"><span class="notice-dot"></span><strong>${pinned.title}</strong><span>查看详情 →</span></a></div></div>` : ''}
       <header class="site-header">
         <div class="shell nav">
-          <a class="brand" href="index.html"><span class="brand-mark"></span><span>嘻嘻狐计划<small>AI GAME JAM 01</small></span></a>
+          <a class="brand" href="index.html"><span class="brand-mark"></span><span>AI 游戏展<small>AI GAME JAM 01</small></span></a>
           <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">菜单</button>
           <nav class="nav-links" aria-label="主要导航">
             ${nav.map(([href, label]) => `<a href="${href}" ${current === href ? 'aria-current="page"' : ''}>${label}</a>`).join('')}
@@ -32,7 +32,7 @@
   }
 
   function footer() {
-    return `<footer class="site-footer"><div class="shell footer-grid"><div><strong>嘻嘻狐 AI Game Jam</strong><p>一个小规模、可持续的 AI 游戏展览与评选实验。</p></div><div class="footer-links"><a href="rules.html">活动规则</a><a href="notices.html">公告</a><a href="../">返回个人主页</a></div></div></footer>`;
+    return `<footer class="site-footer"><div class="shell footer-grid"><div><strong>AI Game Jam 01</strong><p>一个小规模、可持续的 AI 游戏展览与评选实验。</p></div><div class="footer-links"><a href="rules.html">活动规则</a><a href="notices.html">公告</a><a href="archive.html">历届归档</a></div></div></footer>`;
   }
 
   function mountChrome() {
@@ -106,7 +106,7 @@
       target.innerHTML = `<section class="page-hero"><div class="shell"><div class="breadcrumb"><a href="index.html">首页</a> / <a href="games.html">作品</a> / 详情</div><h1 class="page-title">作品详情</h1><p>作品可能尚未发布、链接有误，或正在维护。</p></div></section><section class="section compact"><div class="shell"><div class="empty"><strong>未找到对应作品</strong><p>首批作品通过审核后，将按永久作品 ID 自动填充内容。</p><a class="button secondary" href="games.html">返回作品展厅</a></div></div></section>`;
       return;
     }
-    document.title = `${game.title}｜嘻嘻狐 AI Game Jam`;
+    document.title = `${game.title}｜AI Game Jam 01`;
     const action = game.playUrl ? `<a class="button" href="${game.playUrl}" target="_blank" rel="noopener noreferrer">${game.platforms.includes('Web') ? '在线游玩' : '下载游戏'} ↗</a>` : `<span class="button disabled">链接维护中</span>`;
     target.innerHTML = `<section class="page-hero"><div class="shell"><div class="breadcrumb"><a href="index.html">首页</a> / <a href="games.html">作品</a> / ${game.title}</div><p class="eyebrow">${game.platforms.join(' · ')}</p><h1 class="page-title">${game.title}</h1><p>${game.summary}</p><div class="actions">${action}</div></div></section><section class="section compact"><div class="shell split"><article class="panel"><p class="eyebrow">作者</p><h3>${game.author}</h3><p>${game.description || game.summary}</p></article><article class="panel accent"><p class="eyebrow">AI 使用</p><h3>${(game.aiTools || []).join(' · ') || '待补充'}</h3><p>${game.aiUsage || '作者尚未补充详细说明。'}</p></article></div></section>`;
   }

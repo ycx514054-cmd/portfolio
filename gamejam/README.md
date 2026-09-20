@@ -1,4 +1,4 @@
-# 嘻嘻狐 AI Game Jam 静态站
+# AI Game Jam 静态站
 
 这是首届活动的可公开预览 MVP，适合放在现有 GitHub Pages 网站的 `/gamejam/` 子目录。
 

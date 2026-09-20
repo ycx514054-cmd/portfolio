@@ -1,7 +1,7 @@
 window.GAME_JAM_DATA = {
   event: {
     edition: "01",
-    title: "嘻嘻狐 AI Game Jam 01",
+    title: "AI Game Jam 01",
     shortTitle: "AI GAME JAM 01",
     status: "preparing",
     eyebrow: "首届 · 筹备中",
