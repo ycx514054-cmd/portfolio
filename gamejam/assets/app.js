@@ -1,4 +1,5 @@
 (function () {
+  document.documentElement.classList.add('js');
   const data = window.GAME_JAM_DATA;
 
   function pageName() {
@@ -118,6 +119,27 @@
     }));
   }
 
+  function revealOnScroll() {
+    const items = document.querySelectorAll('[data-reveal]');
+    if (!items.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      items.forEach(item => item.classList.add('revealed'));
+      return;
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    items.forEach((item, index) => {
+      item.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 70}ms`);
+      observer.observe(item);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     mountChrome();
     eventValues();
@@ -126,5 +148,6 @@
     renderNotices();
     renderGameDetail();
     filters();
+    revealOnScroll();
   });
 })();
